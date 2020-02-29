@@ -80,6 +80,8 @@ class TestPetShop < Minitest::Test
     }
   end
 
+
+
   def test_pet_shop_name
     name = pet_shop_name(@pet_shop)
     assert_equal("Camelot of Pets", name)
@@ -118,20 +120,22 @@ class TestPetShop < Minitest::Test
     assert_equal(6, count)
   end
 
-  # def test_all_pets_by_breed__found
-  #   pets = pets_by_breed(@pet_shop, "British Shorthair")
-  #   assert_equal(2, pets.count)
-  # end
+  def test_all_pets_by_breed__found
+    pets = all_pets_by_breed__found(@pet_shop, "British Shorthair")
+  #  breed = pet_breed(@pet_shop)
+    assert_equal(2, pets.count)
+  end
 
-  # def test_all_pets_by_breed__not_found
-  #   pets = pets_by_breed(@pet_shop, "Dalmation")
-  #   assert_equal(0, pets.count)
-  # end
 
-  # def test_find_pet_by_name__returns_pet
-  #   pet = find_pet_by_name(@pet_shop, "Arthur")
-  #   assert_equal("Arthur", pet[:name])
-  # end
+  def test_all_pets_by_breed__not_found
+    pets = all_pets_by_breed__not_found(@pet_shop, "Dalmation")
+    assert_equal(0, pets.count)
+  end
+
+  def test_find_pet_by_name__returns_pet
+    pet = find_pet_by_name(@pet_shop, "Arthur")
+    assert_equal("Arthur", pet[:name])
+  end
 
   # def test_find_pet_by_name__returns_nil
   #   pet = find_pet_by_name(@pet_shop, "Fred")
