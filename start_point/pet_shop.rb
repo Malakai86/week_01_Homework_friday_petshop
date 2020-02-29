@@ -25,22 +25,35 @@ end
 
 
 
-def all_pets_by_breed__found(pets, breed)
+def all_pets_by_breed__found(shop, breed)
   found_breed = []
-  for pet in pets
-  if pets[:breed] == breed
-    pets[:breed].push(found_breed)
+  for pet in shop
+  if shop[:breed] == breed
+    shop[:breed].push(found_breed)
   end
   end
 end
 
-def all_pets_by_breed__not_found(pets, breed)
+def all_pets_by_breed__not_found(shop, breed)
   not_found = []
-  for pet in pets
-    if pets[:breed] != breed
+  for pet in shop
+    if shop[:breed] != breed
     end
     return not_found
   end
 end
 
-#def test_find_pet_by_name__returns_pet
+def find_pet_by_name__returns_pet(shop, name)
+     if shop[:pets][:name] == name
+      end
+      return shop[:pets][:name]
+  end
+
+def find_pet_by_name__returns_nil(shop, name)
+not_found = []
+  for pet in shop
+  if shop[:name] != name
+  end
+return not_found
+end
+end
