@@ -96,3 +96,4 @@ def customer_can_afford_pet(customer, pet)
   end
   return true
 end
+#Exact funs test works? Probly wrong.
