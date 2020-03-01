@@ -23,52 +23,48 @@ def stock_count(shop)
   return shop[:pets].length
 end
 
-# def likes_to_eat(person, food)
-#   if person[:favourites][:snacks].include?(food)
-#     return true
-#   else return false
+def pets_by_breed(shop, breed)
+  found_pets = []
+  for pet in shop[:pets]
+    if pet[:breed] == breed
+      found_pets.push(pet)
+    end
+  end
+  return found_pets
+end
+
+# def pets_by_breed(shop, breed)
+#   for pet in shop[:pets]
+#     if pet[:breed] != breed
+#       return nil
+#     end
 #   end
 # end
 
-def all_pets_by_breed__found(shop, breed)
-  found_breed = []
-  for pet in shop
-  if shop[:breed].include?(breed)
-    shop[:pets][:breed].push(found_breed)
-    # shop[:pets][:breed] +=
-  end
-  end
-   return found_breed.length
-end
-  # return pets
 
-def all_pets_by_breed__not_found(shop, breed)
+def find_pet_by_name(shop, name)
+     for pet in shop[:pets]
+       if pet[:name] == name
+         return name
+       end
+     end
+  end
+
+  def find_pet_by_name__returns_nil(shop, name)
   not_found = []
-  for pet in shop
-    if shop[:breed] != breed
+    for pet in shop
+    if shop[:name] != name
     end
-    return not_found
+  return not_found
   end
-end
-
-def find_pet_by_name__returns_pet(shop, name)
-     if shop[:pets][:name] == name
-      end
-      return shop[:pets][:name]
   end
 
-def find_pet_by_name__returns_nil(shop, name)
-not_found = []
-  for pet in shop
-  if shop[:name] != name
-  end
-return not_found
-end
-end
 
-def remove_pet_by_name(shop, name)
-  if pet[:name] == name
-    return pet[:name] = assert_nil
+  def remove_pet_by_name(shop, name)
+  for pet in shop[:pets]
+    if pet[:name] == name
+      shop[:pets].delete(pet)
+    end
   end
 end
 
@@ -91,4 +87,10 @@ end
 
 def add_pet_to_customer(customer, new_pet)
   customer[:pets] << new_pet
+end
+
+def customer_can_afford_pet(customer, pet)
+  if customer[:cash] >= pet[:price]
+  end
+  return true
 end
