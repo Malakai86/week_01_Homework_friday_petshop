@@ -76,3 +76,7 @@ def add_pet_to_stock(shop, new_pet)
   shop[:pets] << new_pet
   return shop[:pets].length
 end
+
+def customer_cash(cash)
+  return cash[:cash]
+end
